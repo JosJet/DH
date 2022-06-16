@@ -42,6 +42,103 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 2,
 		shortDesc: "If held by Sandshrew and Sandslash, summon Sandstorm for 5 turns on switch-in.",
 	},
+	alarmclock: {
+		name: "Alarm Clock",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'slp') {
+				this.add('-activate', pokemon, 'item: Alarm Clock');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'slp') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Alarm Clock');
+			}
+			return false;
+		},
+		num: 1004,
+		gen: 2,
+		shortDesc: "Prevents Sleep status from being applied to the holder.",
+    },
+	heatpack: {
+		name: "Heat Pack",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'frz') {
+				this.add('-activate', pokemon, 'item: Heat Pack');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'frz') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Heat Pack');
+			}
+			return false;
+		},
+		num: 1005,
+		gen: 2,
+		shortDesc: "Prevents Freeze status from being applied to the holder.",
+    },
+	smellingsalts: {
+		name: "Smelling Salts",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'par') {
+				this.add('-activate', pokemon, 'item: Smelling Salts');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'par') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Smelling Salts');
+			}
+			return false;
+		},
+		num: 1006,
+		gen: 2,
+		shortDesc: "Prevents Paralysis status from being applied to the holder.",
+    },
+	 ointment: {
+		name: "Ointment",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'brn') {
+				this.add('-activate', pokemon, 'item: Ointment');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'brn') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Ointment');
+			}
+			return false;
+		},
+		num: 1007,
+		gen: 2,
+		shortDesc: "Prevents Burn status from being applied to the holder.",
+    },
+	 airfilter: {
+		name: "Air Filter",
+		onUpdate(pokemon) {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
+				this.add('-activate', pokemon, 'item: Air Filter');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] item: Air Filter');
+			}
+			return false;
+		},
+		num: 1008,
+		gen: 2,
+		shortDesc: "Prevents Poison status from being applied to the holder.",
+    },
+	
+	
 	
 	
 	// Vanilla Edits
