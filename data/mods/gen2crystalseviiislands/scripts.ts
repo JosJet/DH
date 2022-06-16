@@ -28,6 +28,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				if (csi.includes(id)) this.modData('FormatsData', id).tier = "C:SI";
 			}
 		};
+		delete this.modData('Learnsets', 'exoltol').learnset.bellydrum;
 		
 		this.modData('Learnsets', 'scyther').learnset.swarmattack = ['2L1'];
 		this.modData('Learnsets', 'heracross').learnset.swarmattack = ['2L1'];
