@@ -18,6 +18,26 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		type: "Fire",
 		contestType: "Tough",
 	},
+	boomba: {
+		num: 827,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		name: "boomba",
+		shortDesc: "30% chance to burn the target. Thaws target.",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, defrost: 1},
+		thawsTarget: true,
+		condition: {
+			onStart() {
+				this.add('-fieldstart', 'move: Gravity');
+			}
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Tough",
+	},
    inkgulp: {
 		num: 828,
 		accuracy: 100,
