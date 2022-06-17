@@ -29,11 +29,9 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
-		condition: {
-			onStart() {
-				this.add('-fieldstart', 'move: Gravity');
-			}
-		},
+		self: {
+				useMove: 'gravity',
+			},
 		target: "normal",
 		type: "Fire",
 		contestType: "Tough",
