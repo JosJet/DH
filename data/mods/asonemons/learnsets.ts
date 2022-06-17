@@ -8,6 +8,7 @@ export const Learnsets: {["8L1"]: LearnsetData} = {
 			attract: ["7M", "6M", "5M", "4M"],
 			bugbite: ["7T", "7L1", "6T", "6L1", "5T", "5L1", "4T", "4L1"],
 			bugbuzz: ["7L1", "6L1", "5L57", "4L54"],
+			boomba: ["8L1"],
 			captivate: ["4M"],
 			confide: ["7M", "6M"],
 			defog: ["7T", "4M"],
