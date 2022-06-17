@@ -30,7 +30,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		flags: {protect: 1, mirror: 1, defrost: 1},
 		thawsTarget: true,
 		onHit(source) {
-				this.useMove('earthquake', this.effectData.target); // going to rework this a bit
+				this.useMove('gravity'); // going to rework this a bit
 		},
 		target: "normal",
 		type: "Fire",
