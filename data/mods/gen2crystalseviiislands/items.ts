@@ -46,6 +46,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Alarm Clock",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'slp') {
+				pokemon.cureStatus();
+			}
+		},
+		/*
+		onUpdate(pokemon) {
+			if (pokemon.status === 'slp') {
 				this.add('-activate', pokemon, 'item: Alarm Clock');
 				pokemon.cureStatus();
 			}
@@ -57,6 +63,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 			return false;
 		},
+		*/
 		num: 1004,
 		gen: 2,
 		shortDesc: "Prevents Sleep status from being applied to the holder.",
