@@ -50,9 +50,9 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},*/
 		onUpdate(pokemon) {
-			this.add("-activate", pokemon, "item: Alarm Clock");
 			if (pokemon.status === 'slp') {
 				pokemon.cureStatus();
+				this.add('-activate', pokemon, 'item: Alarm Clock');
 			}
 		},
 		onSetStatus(status, target, source, effect) {
