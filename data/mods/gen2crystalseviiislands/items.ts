@@ -105,7 +105,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Ointment",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'brn') {
-				this.add('-activate', pokemon, 'item: Ointment');
+				this.add('-message', `${pokemon.name} is protected by Ointment...`);
 				pokemon.cureStatus();
 			}
 		},
