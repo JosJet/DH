@@ -134,7 +134,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source !== pokemon) || this.activeMove.id === 'thief') {
-				this.add('-message', 'Sevii Sap cannot be removed');
+				this.add('-message', 'Sevii Sap cannot be removed.');
 				return false;
 			}
 		},
@@ -149,9 +149,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 8);
 		},
-		condition: {
-			duration: 10,
-		},
+		duration: 10,
 		num: 1009,
 		gen: 2,
 		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
