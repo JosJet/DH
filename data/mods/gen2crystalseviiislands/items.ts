@@ -156,9 +156,9 @@ export const Items: {[itemid: string]: ItemData} = {
 	wynaut: {
         name: "Wynaut",
         onResidual(pokemon) {
-            if (!pokemon.hp) return;
+            if (!pokemon.hp  || hitSub) return;
             for (const target of pokemon.side.foe.active) {
-                if (!target || !target.hp || !target.hitSub) continue;
+                if (!target || !target.hp) continue;
                 if (pokemon.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, pokemon);
                 }
