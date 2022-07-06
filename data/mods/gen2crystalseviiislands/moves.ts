@@ -297,6 +297,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "Normal",
 		type: "Normal",
 	},
+	boulderrush: {
+		num: -7,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Boulder Rush",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		recoil: [1, 3],
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+	},
 	
 	///////
 	spikes: {
