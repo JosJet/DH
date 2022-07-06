@@ -157,10 +157,8 @@ export const Items: {[itemid: string]: ItemData} = {
 	wynaut: {
         name: "Wynaut",
         onResidual(pokemon, move) {
-			   const hitSub = pokemon.volatiles['substitute'] && move.category !== 'Status';
-            if (!pokemon.hp  || hitSub) return;
             for (const target of pokemon.side.foe.active) {
-                if (!target || !target.hp) continue;
+                if (!target || !target.hp || move.category !== 'Status') continue;
                 if (pokemon.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, pokemon);
                 }
@@ -168,7 +166,7 @@ export const Items: {[itemid: string]: ItemData} = {
         },
         num: 1004,
         gen: 2,
-        shortDesc: "if held by a pokemon behind a substitute, Opponent loses 1/8th Max HP",
+        shortDesc: "If user is behind a Substitute and receives no damage, foe loses 1/8th Max HP.",
 	},
 	
 	
