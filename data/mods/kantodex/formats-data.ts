@@ -60,11 +60,19 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	beedrill: {
 		tier: "OU",
 	},
+	beedrillmega: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	pidgey: {
 		tier: "LC",
 	},
 	pidgeotto: {
 		tier: "NFE",
+	},
+	pidgeotmega: {
+		isNonstandard: "Past",
+		tier: "Illegal",
 	},
 	pidgeot: {
 		tier: "OU",
@@ -230,15 +238,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	parasect: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	venonat: {
 		tier: "LC",
 	},
 	venomoth: {
-		isNonstandard: "Past",
-		tier: "Illegal",
+		tier: "OU",
 	},
 	diglett: {
 		tier: "LC",

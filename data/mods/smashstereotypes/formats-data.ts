@@ -290,7 +290,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	swampertanti: {
 		tier: "SSS",
 	},
-	banjokazooie: {
+	banjoandkazooie: {
 		tier: "SSS",
 	},
 	polbearab: {
@@ -315,6 +315,24 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 		tier: "SSS",
 	},
 	toxicargo: {
+		tier: "SSS",
+	},
+	heatloom: {
+		tier: "SSS",
+	},
+	drampaschroedinger: {
+		tier: "SSS",
+	},
+	gigacrab: {
+		tier: "SSS",
+	},
+	cougaquil: {
+		tier: "SSS",
+	},
+	latias: {
+		tier: "SSS",
+	},
+	landorustherian: {
 		tier: "SSS",
 	},
 };
