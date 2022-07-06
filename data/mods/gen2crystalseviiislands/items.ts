@@ -145,7 +145,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 8);
-			if (pokemon.itemState.residual === 10) {
+			if (pokemon.itemStateDuration === 10) {
 				pokemon.useItem();
 			}
 		},
