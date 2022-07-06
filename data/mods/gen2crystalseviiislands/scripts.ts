@@ -30,7 +30,6 @@ export const Scripts: ModdedBattleScriptsData = {
 		};
 		delete this.modData('Learnsets', 'exoltol').learnset.bellydrum;
 		
-		this.modData('Learnsets', 'scyther').learnset.swarmattack = ['2L1'];
 		this.modData('Learnsets', 'heracross').learnset.swarmattack = ['2L1'];
 		this.modData('Learnsets', 'pinsir').learnset.swarmattack = ['2L1'];
 		this.modData('Learnsets', 'forretress').learnset.swarmattack = ['2L1'];
