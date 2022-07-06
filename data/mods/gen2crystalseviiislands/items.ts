@@ -133,7 +133,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			this.heal(pokemon.baseMaxhp / 24);
 		},
 		onTakeItem(item, pokemon, source) {
-			if ((source && source !== pokemon) || this.activeMove.id === 'knockoff') {
+			if ((source && source !== pokemon) || this.activeMove.id === 'thief') {
 				this.add('-message', pokemon, 'Sevii Sap cannot be removed');
 				return false;
 			}
