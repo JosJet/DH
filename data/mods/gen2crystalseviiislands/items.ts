@@ -134,7 +134,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onTakeItem(item, pokemon, source) {
 			if ((source && source !== pokemon) || this.activeMove.id === 'thief') {
-				this.add('-message', pokemon, 'Sevii Sap cannot be removed');
+				this.add('-message', 'Sevii Sap cannot be removed');
 				return false;
 			}
 		},
