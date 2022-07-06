@@ -5,7 +5,6 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				this.add("-activate", target, "item: Power Link");
 				this.debug('power link - remove charge turn for ' + move.id);
-				recoil: [33, 100],
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
 				return false; // skip charge turn
@@ -68,9 +67,6 @@ export const Items: {[itemid: string]: ItemData} = {
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'frz') return;
 			this.add('-activate', source, 'item: Heat Pack');
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] item: Heat Pack');
-			}
 			return false;
 		},
 		num: 1005,
@@ -148,7 +144,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 8);
-			if (pokemon.itemState.duration === 10) {
+			if (pokemon.itemState.activate === 10) {
 				pokemon.useItem();
 			}
 		},
