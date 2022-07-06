@@ -156,7 +156,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	wynaut: {
         name: "Wynaut",
         onResidual(pokemon, move) {
-			   const hitSub = pokemon.volatiles['substitute'] && !move.flags['authentic']);
+			   const hitSub = pokemon.volatiles['substitute'] && !move.flags['authentic'];
             if (!pokemon.hp  || hitSub) return;
             for (const target of pokemon.side.foe.active) {
                 if (!target || !target.hp) continue;
