@@ -153,8 +153,21 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 2,
 		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
 	},
-	
-	
+	wynaut: {
+        name: "Wynaut",
+        onResidual(pokemon) {
+            if (!pokemon.hp) return;
+            for (const target of pokemon.side.foe.active) {
+                if (!target || !target.hp) continue;
+                if (pokemon.volatiles['substitute'] || !target.hitSub) {
+                    this.damage(target.baseMaxhp / 8, target, pokemon);
+                }
+            }
+        },
+        num: 1004,
+        gen: 2,
+        shortDesc: "if held by a pokemon behind a substitute, Opponent loses 1/8th Max HP",
+	},
 	
 	
 	// Vanilla Edits
