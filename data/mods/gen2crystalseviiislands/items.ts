@@ -1,11 +1,12 @@
 export const Items: {[itemid: string]: ItemData} = {
 	powerlink: {
 		name: "Power Link",
-		onChargeMove(target, move) {
+		onChargeMove(source, target, move) {
+			let damage = this.getDamage(source, target, move);
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				this.add("-activate", target, "item: Power Link");
 				this.debug('power link - remove charge turn for ' + move.id);
-				this.damage(Math.round(target.maxhp / 3), target, target, this.dex.getEffect('Recoil'), true);
+				this.damage(1, source, target, 'recoil');
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
 				return false; // skip charge turn
