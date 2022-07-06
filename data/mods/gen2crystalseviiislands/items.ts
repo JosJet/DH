@@ -148,7 +148,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 8);
-			if (pokemon.side.active.length === 10) {
+			if (pokemon.activeTurns === 10) {
 				pokemon.useItem();
 			}
 		},
