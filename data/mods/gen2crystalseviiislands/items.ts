@@ -158,8 +158,8 @@ export const Items: {[itemid: string]: ItemData} = {
         onResidual(pokemon) {
             if (!pokemon.hp) return;
             for (const target of pokemon.side.foe.active) {
-                if (!target || !target.hp) continue;
-                if (pokemon.volatiles['substitute'] || !target.hitSub) {
+                if (!target || !target.hp || !target.hitSub) continue;
+                if (pokemon.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, pokemon);
                 }
             }
