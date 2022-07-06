@@ -44,11 +44,6 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	alarmclock: {
 		name: "Alarm Clock",
-		/*onUpdate(pokemon) {
-			if (pokemon.status === 'slp') {
-				pokemon.cureStatus();
-			}
-		},*/
 		onUpdate(pokemon) {
 			if (pokemon.status === 'slp') {
 				pokemon.cureStatus();
@@ -67,12 +62,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Heat Pack",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'frz') {
-				this.add('-activate', pokemon, 'item: Heat Pack');
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'frz') return;
+			this.add('-activate', source, 'item: Heat Pack');
 			if ((effect as Move)?.status) {
 				this.add('-immune', target, '[from] item: Heat Pack');
 			}
@@ -86,15 +81,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Smelling Salts",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'par') {
-				this.add('-activate', pokemon, 'item: Smelling Salts');
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'par') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] item: Smelling Salts');
-			}
+			this.add('-activate', source, 'item: Smelling Salts');
 			return false;
 		},
 		num: 1006,
@@ -105,15 +97,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Ointment",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'brn') {
-				this.add('-message', `${pokemon.name} is protected by Ointment...`);
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'brn') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] item: Ointment');
-			}
+			this.add('-activate', source, 'item: Ointment');
 			return false;
 		},
 		num: 1007,
@@ -124,15 +113,12 @@ export const Items: {[itemid: string]: ItemData} = {
 		name: "Air Filter",
 		onUpdate(pokemon) {
 			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
-				this.add('-activate', pokemon, 'item: Air Filter');
 				pokemon.cureStatus();
 			}
 		},
 		onSetStatus(status, target, source, effect) {
 			if (status.id !== 'psn' && status.id !== 'tox') return;
-			if ((effect as Move)?.status) {
-				this.add('-immune', target, '[from] item: Air Filter');
-			}
+			this.add('-activate', source, 'item: Air Filter');
 			return false;
 		},
 		num: 1008,
