@@ -5,7 +5,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				this.add("-activate", target, "item: Power Link");
 				this.debug('power link - remove charge turn for ' + move.id);
-				this.add('-recoil', [1, 3]);
+				this.damage(Math.round(target.maxhp / 3), target, target, this.dex.getEffect('Recoil'), true);
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
 				return false; // skip charge turn
