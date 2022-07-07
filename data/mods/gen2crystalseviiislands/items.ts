@@ -156,11 +156,17 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	wynaut: {
         name: "Wynaut",
-        onResidual(damage, target, pokemon, move) {
-            if (move.category !== 'Status') return;
+		  onStart(pokemon) {
+			  this.effectState.subDamaged = false;
+		  },
+		  onAfterSubDamage(damage, target, source, effect) {
+		  	  this.effectState.subDamaged = true;
+		  },
+        onResidual(pokemon) {
+            if (!pokemon.hp) return;
             for (const target of pokemon.side.foe.active) {
                 if (!target || !target.hp) continue;
-                if (pokemon.volatiles['substitute']) {
+                if (pokemon.volatiles['substitute'] && this.effectState.subDamaged = true) {
                     this.damage(target.baseMaxhp / 8, target, pokemon);
                 }
             }
