@@ -157,8 +157,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 2,
 		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
 	},
-	/*wynaut: {
-        name: "Wynaut",
+	wynot: {
+        name: "Wynot",
 		  onStart(pokemon) {
 			  this.effectState.subDamaged = false;
 		  },
@@ -174,11 +174,11 @@ export const Items: {[itemid: string]: ItemData} = {
                 }
             }
         },
-        num: 1004,
+        num: 1009,
         gen: 2,
         shortDesc: "If user is behind a Substitute and receives no damage, foe loses 1/8th Max HP.",
 	},
-	*/
+	
 	
 	// Vanilla Edits
 	
