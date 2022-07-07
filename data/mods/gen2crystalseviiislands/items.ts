@@ -157,7 +157,7 @@ export const Items: {[itemid: string]: ItemData} = {
 	wynaut: {
         name: "Wynaut",
         onResidual(target, source, move) {
-            for (const target of source.side.active) {
+            for (const target of source.side) {
                 if (!target || !target.hp || move.category !== 'Status') continue;
                 if (source.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, source);
