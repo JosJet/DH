@@ -162,7 +162,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		  onStart(pokemon) {
 			  this.effectState.subDamaged = false;
 		  },
-		  onAfterSubDamage(damage, target, source, effect) {
+		  onAfterSubDamage(pokemon) {
 		  	  this.effectState.subDamaged = true;
 		  },
         onResidual(pokemon) {
