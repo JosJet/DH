@@ -157,13 +157,18 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 2,
 		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
 	},
-	wynot: {
-        name: "Wynot",
+	wynaut: {
+        name: "Wynaut",
 		  onStart(pokemon) {
-			  this.effectState.subDamaged = false;
+			  if (pokemon.volatiles['substitute']) {
+				  this.add('-item', pokemon, 'Wynaut')
+				  return;
+			  }
 		  },
-		  onAfterSubDamage(pokemon) {
-		  	  this.effectState.subDamaged = true;
+		  onAfterSubDamage(damage, pokemon, source, effect) {
+		  	  this.debug('effect: ', + effect.id);
+			  this.add('-enditem', pokemon, 'Wynaut')
+			  return false;
 		  },
         onResidual(pokemon) {
             if (!pokemon.hp) return;
