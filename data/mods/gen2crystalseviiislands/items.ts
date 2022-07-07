@@ -156,12 +156,13 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	wynaut: {
         name: "Wynaut",
-        onResidual(target, source, move) {
-			  if (!target || !target.hp) continue;
-			  for (const target of source) {
-                if (source.volatiles['substitute']) {
-                    this.damage(target.baseMaxhp / 8, target, source);
-					 }
+        onResidual(pokemon) {
+            if (!pokemon.hp) return;
+            for (const target of pokemon.side.foe.active) {
+                if (!target || !target.hp) continue;
+                if (pokemon.volatiles['substitute']) {
+                    this.damage(target.baseMaxhp / 8, target, pokemon);
+                }
             }
         },
         num: 1004,
