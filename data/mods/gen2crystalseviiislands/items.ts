@@ -146,15 +146,18 @@ export const Items: {[itemid: string]: ItemData} = {
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
 			this.heal(pokemon.baseMaxhp / 8);
-			if (pokemon.itemStateDuration === 10) {
+			/*if (pokemon.itemStateDuration === 10) {
 				pokemon.useItem();
-			}
+			}*/
+		},
+		condition: {
+			duration: 10,
 		},
 		num: 1009,
 		gen: 2,
 		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
 	},
-	wynaut: {
+	/*wynaut: {
         name: "Wynaut",
 		  onStart(pokemon) {
 			  this.effectState.subDamaged = false;
@@ -175,7 +178,7 @@ export const Items: {[itemid: string]: ItemData} = {
         gen: 2,
         shortDesc: "If user is behind a Substitute and receives no damage, foe loses 1/8th Max HP.",
 	},
-	
+	*/
 	
 	// Vanilla Edits
 	
