@@ -6,9 +6,9 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				this.add("-activate", target, "item: Power Link");
 				this.debug('power link - remove charge turn for ' + move.id);
-				this.damage(2, source, target, 'recoil');
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
+				this.damage(1, source, target, 'recoil');
 				return false; // skip charge turn
 			}
 		},
