@@ -161,14 +161,12 @@ export const Items: {[itemid: string]: ItemData} = {
         name: "Wynaut",
 		  onStart(pokemon) {
 			  if (pokemon.volatiles['substitute']) {
-				  this.add('-item', pokemon, 'Wynaut')
 				  return;
 			  }
 		  },
 		  onAfterSubDamage(damage, pokemon, source, effect) {
 		  	  this.debug('effect: ', + effect.id);
-			  this.add('-enditem', pokemon, 'Wynaut')
-			  return;
+			  return false;
 		  },
         onResidual(pokemon) {
             if (!pokemon.hp) return;
