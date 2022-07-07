@@ -157,10 +157,12 @@ export const Items: {[itemid: string]: ItemData} = {
 	wynaut: {
         name: "Wynaut",
         onResidual(target, source, move) {
-			  		 if (!target || !target.hp) continue;
+			  if (!target || !target.hp) continue;
+			  for (const target of source) {
 			  		 if (move.category !== 'Status') return false;
                 if (source.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, source);
+					 }
             }
         },
         num: 1004,
