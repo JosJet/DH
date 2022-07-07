@@ -168,7 +168,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		  onAfterSubDamage(damage, pokemon, source, effect) {
 		  	  this.debug('effect: ', + effect.id);
 			  if (effect.effectType === 'Move') {
-			  		this.add('-activate', pokemon, 'Wynaut')
+			  		this.add('-fail', pokemon, 'Wynaut')
 				   return;
 			  }
 		  },
