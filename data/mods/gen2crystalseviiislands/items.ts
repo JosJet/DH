@@ -159,7 +159,7 @@ export const Items: {[itemid: string]: ItemData} = {
         onResidual(target, source, move) {
 			  if (!target || !target.hp) continue;
 			  for (const target of source) {
-			  		 if (move.category !== 'Status') return false;
+			  		 if (move.category !== 'Status') continue;
                 if (source.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, source);
 					 }
