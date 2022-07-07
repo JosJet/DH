@@ -9,7 +9,7 @@ export const Items: {[itemid: string]: ItemData} = {
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
 				return false; // skip charge turn
-				this.damage(1, source, target, 'recoil');
+				/*this.damage(1, source, target, 'recoil');*/
 			}
 		},
 		itemUser: ["Dodrio", "Doduo"],
