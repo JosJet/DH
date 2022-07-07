@@ -168,13 +168,13 @@ export const Items: {[itemid: string]: ItemData} = {
 		  onAfterSubDamage(damage, pokemon, source, effect) {
 		  	  this.debug('effect: ', + effect.id);
 			  this.add('-enditem', pokemon, 'Wynaut')
-			  return false;
+			  return;
 		  },
         onResidual(pokemon) {
             if (!pokemon.hp) return;
             for (const target of pokemon.side.foe.active) {
                 if (!target || !target.hp) continue;
-                if (pokemon.volatiles['substitute'] && this.effectState.subDamaged = true) {
+                if (pokemon.volatiles['substitute']) {
                     this.damage(target.baseMaxhp / 8, target, pokemon);
                 }
             }
