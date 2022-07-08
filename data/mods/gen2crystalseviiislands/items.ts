@@ -10,8 +10,8 @@ export const Items: {[itemid: string]: ItemData} = {
 				return false; // skip charge turn
 			}
 		},
-		onHit(target, source, move) {
-				let damage = this.getDamage(target, source, move);
+		onHit(source, target, move) {
+				let damage = this.getDamage(source, target, move);
 				this.damage(1, source, target, 'recoil');
 		},
 		itemUser: ["Dodrio", "Doduo"],
