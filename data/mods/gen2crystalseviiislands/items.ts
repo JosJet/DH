@@ -11,10 +11,8 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onAfterHit(target, source, move) {
-			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				let damage = this.getDamage(target, source, move);
-				this.damage([1, 3], source, target, 'recoil');
-			}
+				this.damage(1, source, target, 'recoil');
 		},
 		itemUser: ["Dodrio", "Doduo"],
 		num: 1001,
