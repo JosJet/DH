@@ -12,7 +12,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		onHit(target, source, move) {
 				/*let damage = this.getDamage(target, source, move);*/
-				this.damage(1, source, target, 'recoil');
+				this.damage(source.baseMaxhp / 8, source, target, 'recoil');
 		},
 		itemUser: ["Dodrio", "Doduo"],
 		num: 1001,
