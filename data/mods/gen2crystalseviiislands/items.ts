@@ -10,7 +10,7 @@ export const Items: {[itemid: string]: ItemData} = {
 				return false; // skip charge turn
 			}
 		},
-		onTryPrimaryHit(target, source, move) {
+		onAfterHit(target, source, move) {
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
 				let damage = this.getDamage(target, source, move);
 				this.damage([1, 3], source, target, 'recoil');
