@@ -8,7 +8,7 @@ export const Items: {[itemid: string]: ItemData} = {
 				this.debug('power link - remove charge turn for ' + move.id);
 				this.attrLastMove('[still]');
 				this.addMove('-anim', target, move.name, target);
-				this.damage(1, source, target, 'recoil');
+				this.damage(1, 3, source, target, 'recoil');
 				return false; // skip charge turn
 			}
 		},
