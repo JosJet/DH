@@ -297,6 +297,25 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "Normal",
 		type: "Normal",
 	},
+	eightbittorment: {
+        num: -7,
+        accuracy: 100,
+        basepower: 80,
+        category: "Physical",
+        name: "8-bit Torment",
+        pp: 10,
+        priority: 0,
+        flags: {contact: 1, protect: 1, mirror: 1},
+        secondary: {
+            chance: 100,
+            boosts: {
+                atk: -1,
+            },
+        },
+        shortDesc: "100% chance to lower the foe's attack.",
+        target: "normal",
+        type: "Ghost",
+    },
 	
 	///////
 	spikes: {
