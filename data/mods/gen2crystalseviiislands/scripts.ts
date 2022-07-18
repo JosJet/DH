@@ -75,5 +75,8 @@ export const Scripts: ModdedBattleScriptsData = {
 		this.modData('Learnsets', 'tunguru').learnset.hypeup = ['2L1'];
 		this.modData('Learnsets', 'snubbull').learnset.hypeup = ['2L1'];
 		this.modData('Learnsets', 'ursaring').learnset.hypeup = ['2L1'];
+		
+		this.modData('Learnsets', 'horatekku').learnset.eightbittorment = ['2L1'];
+      this.modData('Learnsets', 'bulbasaur').learnset.eightbittorment = ['2L1'];
 	},
 };
