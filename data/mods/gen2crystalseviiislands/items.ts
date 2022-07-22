@@ -116,21 +116,147 @@ export const Items: {[itemid: string]: ItemData} = {
 	},
 	
 	
-	sundae10: {
-		name: "Sundae 10",
-		onModifyDamage(damage, source, target, move) {
-				return this.chainModify([0x1199, 0x1000]);
+	seviisundae: {
+		name: "Sevii Sundae",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae9');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
 		},
-		onSourceAfterFaint(length, target, source, effect) {
-			if (effect && effect.effectType === 'Move') {
-				this.add('-activate', source, 'item: Soul Blade'); 
-				source.setItem('soulbladelvl2');
-				this.add('-item', source, source.getItem(), '[from] item: Soul Blade');
-			}
-		},
-		gen: 8,
-		desc: "The holder's moves deal 1.1x damage + .2x for every KO it has.",
+		num: 1009,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
 	},
+	seviisundae9: {
+		name: "Sevii Sundae (9)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae8');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1010,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae8: {
+		name: "Sevii Sundae (8)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae7');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1011,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae7: {
+		name: "Sevii Sundae (7)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae6');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1012,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae6: {
+		name: "Sevii Sundae (6)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae5');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1013,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae5: {
+		name: "Sevii Sundae (5)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae4');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1014,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae4: {
+		name: "Sevii Sundae (4)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae3');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1014,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae3: {
+		name: "Sevii Sundae (3)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae2');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1015,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae2: {
+		name: "Sevii Sundae (2)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+				pokemon.setItem('seviisundae2');
+				this.add('-item', pokemon, pokemon.getItem(), '[from] item: Sevii Sundae');
+		},
+		num: 1016,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	seviisundae1: {
+		name: "Sevii Sundae (1)",
+		onResidualOrder: 5,
+		onResidualSubOrder: 5,
+		onResidual(pokemon) {
+			this.heal(pokemon.baseMaxhp / 8);
+			this.add('-activate', pokemon, 'item: Sevii Sundae'); 
+		},
+		num: 1017,
+		gen: 2,
+		shortDesc: "At the end of every turn, holder restores 1/8 of its max HP. Lasts 10 turns.",
+	},
+	
+	
+	
 	soulbladelvl2: {
 		name: "Soul Blade Lvl. 2",
 		spritenum: 297,
