@@ -1,5 +1,5 @@
 export const Items: {[itemid: string]: ItemData} = {
-	powerlink: {
+	/*powerlink: {
 		name: "Power Link",
 		onChargeMove(target, move) {
 			if (target.species.id === 'dodrio' || target.species.id === 'doduo') {
@@ -11,14 +11,14 @@ export const Items: {[itemid: string]: ItemData} = {
 			}
 		},
 		onHit(target, source, move) {
-				/*let damage = this.getDamage(target, source, move);*/
-				this.damage(/*this.calcRecoilDamage(damage, move)*/, source, target, 'recoil');
+				let damage = this.getDamage(target, source, move);
+				this.damage(this.calcRecoilDamage(damage, move), source, target, 'recoil');
 		},
 		itemUser: ["Dodrio", "Doduo"],
 		num: 1001,
 		gen: 2,
 		shortDesc: "If held by Doduo or Dodrio, causes its 2-turn moves to be executed in one turn.",
-	},
+	},*/
 	hellfirelantern: {
 		name: "Hellfire Lantern",
 		onSourceTryHit(target, source, move) {
