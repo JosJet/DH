@@ -53,4 +53,7 @@ export const FormatsData: {[k: string]: ModdedSpeciesFormatsData} = {
 	altocumulos: {
 	gen: 2,
 	},
+	aetheon: {
+	gen: 2,
+	},
 };
