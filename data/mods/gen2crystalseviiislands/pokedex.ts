@@ -173,7 +173,16 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 130,
 		prevo: "Cumulos",
 	},
-	
+	aetheon: {
+		num: 270,
+		name: "Aetheon",
+		types: ["Cosmic"],
+		baseStats: {hp: 65, atk: 60, def: 130, spa: 110, spd: 65, spe: 95},
+		abilities: {0: "No Ability"},
+		heightm: 0.8,
+		weightkg: 23.8,
+		prevo: "Eevee",
+	},
 	
 // Vanilla Edits
 	
@@ -202,8 +211,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		inherit: true,
 		evos: ["lunaraknid"],
 	},
-	
-	
 	stantler: {
 		inherit: true,
 		types: ["Normal", "Cosmic"],
@@ -223,5 +230,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	tangela: {
 		inherit: true,
 		types: ["Grass", "Cosmic"],
+	},
+	eevee: {
+		inherit: true,
+		evos: ["Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon", "Aetheon"],
 	},
 };
