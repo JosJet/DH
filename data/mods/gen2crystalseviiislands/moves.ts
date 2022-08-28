@@ -571,6 +571,39 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Cosmic",
 		contestType: "Clever",
 	},
+	starstorm: {
+		num: -16,
+		accuracy: 75,
+		basePower: 120,
+		category: "Special",
+		name: "Star Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			boosts: {
+				evasion: -1,
+			},
+		},
+		target: "normal",
+		type: "Cosmic",
+	},
+	vacuum: {
+		num: -17,
+		accuracy: 95,
+		basePower: 24,
+		category: "Special",
+		name: "Vacuum",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		volatileStatus: 'partiallytrapped',
+		secondary: null,
+		target: "normal",
+		type: "Cosmic",
+	},
+	
 	rapidspin: {
 		inherit: true,
 		onAfterHit(target, pokemon) {
